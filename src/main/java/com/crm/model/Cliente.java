@@ -38,10 +38,16 @@ public class Cliente {
     private BigDecimal saldoActual = BigDecimal.ZERO;
 
     @Column
-    private int facturasVencidas; //AGREGAR A LA BD
+    private int facturasVencidas;
 
     @Column (length = 45)
-    private String estadoServicio;  // AGREGAR A LA BD
+    private String estadoServicio = "ACTIVO";
+
+    @Column
+    private int mesesPagandoConsecutivo =0;
+
+    @Column (length = 45)
+    private String nivelPromo = "SIN_PROMO";
 
 
     //Constructor vacio
@@ -125,5 +131,37 @@ public class Cliente {
 
     public void setSaldoActual(BigDecimal saldoActual) {
         this.saldoActual = saldoActual;
+    }
+
+    public int getFacturasVencidas() {
+        return this.facturasVencidas;
+    }
+
+    public void setFacturasVencidas(int facturasVencidas) {
+        this.facturasVencidas = facturasVencidas;
+    }
+
+    public String getEstadoServicio() {
+        return this.estadoServicio;
+    }
+
+    public void setEstadoServicio(String estadoServicio) {
+        this.estadoServicio = estadoServicio;
+    }
+
+    public int getMesesPagandoConsecutivo() {
+        return this.mesesPagandoConsecutivo;
+    }
+
+    public void setMesesPagandoConsecutivo(int mesesPagandoConsecutivo) {
+        this.mesesPagandoConsecutivo = mesesPagandoConsecutivo;
+    }
+
+    public String getNivelPromo() {
+        return this.nivelPromo;
+    }
+
+    public void setNivelPromo(String nivelPromo) {
+        this.nivelPromo = nivelPromo;
     }
 }
